@@ -29,13 +29,13 @@ jobs:
           distribution: 'temurin'         # JDK 배포판(zulu, adopt, openjdk..) 지정, Eclipse Temurin은 OpenJDK 기반 배포판
 
       - name: Give execute permission to gradlew for edu-goods
-        run: chmod +x ./edu-goods/gradlew
+        run: chmod +x ./edu-user/gradlew
 
       - name: Initialize Gradle project
-        run: ./edu-goods/gradlew init
+        run: ./edu-user/gradlew init
 
       - name: Build edu-goods project
-        run: ./edu-goods/gradlew build
+        run: ./edu-user/gradlew build
 
       - name: Setup Kustomize                 # Kubernetes 리소스 관리, 배포하는 Kustomize 설치
         uses: imranismail/setup-kustomize@v1  # GitHub Actions 제공하는 setup-kustomize 액션 사용(imranismail 만든 Action)
