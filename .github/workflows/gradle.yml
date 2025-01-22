@@ -32,7 +32,7 @@ jobs:
         run: chmod +x ./edu-user/gradlew
 
       - name: Initialize Gradle project
-        run: ./edu-user/gradlew init
+        run: ./edu-user/gradlew init --overwrite
 
       - name: Build edu-goods project
         run: ./edu-user/gradlew build
