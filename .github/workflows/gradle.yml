@@ -28,10 +28,14 @@ jobs:
           java-version: '17'              # 설치할 Java의 버전 지정
           distribution: 'temurin'         # JDK 배포판(zulu, adopt, openjdk..) 지정, Eclipse Temurin은 OpenJDK 기반 배포판
 
-      - name: Build with Gradle Wrapper   # Gradle 빌드 사용해 프로젝트를 빌드
-        run: |
-          chmod +x ./edu-user/gradlew
-          ./edu-user/gradlew --debug build              # 이 단계에서 실행할 쉘 명령어 : gradle build 실행
+      - name: Give execute permission to gradlew for edu-goods
+        run: chmod +x ./edu-goods/gradlew
+
+      - name: Initialize Gradle project
+        run: ./edu-goods/gradlew init
+
+      - name: Build edu-goods project
+        run: ./edu-goods/gradlew build
 
       - name: Setup Kustomize                 # Kubernetes 리소스 관리, 배포하는 Kustomize 설치
         uses: imranismail/setup-kustomize@v1  # GitHub Actions 제공하는 setup-kustomize 액션 사용(imranismail 만든 Action)
