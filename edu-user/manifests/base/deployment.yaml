@@ -21,13 +21,13 @@ spec:
           - name: http
             containerPort: 8080
             protocol: TCP
-        #resources:
-          #requests:
-            #cpu: "1"
-            #memory: "2Gi"
-          #limits:
-            #cpu: "1"
-            #memory: "2Gi"
+        resources:
+          requests:
+            cpu: "2"
+            memory: "4Gi"
+          limits:
+            cpu: "2"
+            memory: "4Gi"
         env:
           - name: SPRING_PROFILES_ACTIVE
             value: prod
