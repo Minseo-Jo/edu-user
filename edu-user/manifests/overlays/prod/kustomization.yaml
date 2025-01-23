@@ -10,4 +10,4 @@ patchesStrategicMerge:
 - ingress.yaml
 images:
 - name: choms0209/k8s-edu
-  newTag: "202501231028"
+  newTag: "202501231427"
