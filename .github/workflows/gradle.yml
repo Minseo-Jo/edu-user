@@ -56,6 +56,7 @@ jobs:
 
       - name: 'Build & Tag Image'             # docker build, tag 설정     
         run: |
+          cd ./edu-user
           docker build -t ${{ secrets.DOCKERHUB_LOGIN_SERVER  }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} -f Dockerfile .
           docker tag ${{ secrets.DOCKERHUB_LOGIN_SERVER  }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }} ${{ env.REPO_ACCOUNT  }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
 
