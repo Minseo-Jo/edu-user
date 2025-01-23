@@ -1,5 +1,6 @@
 resources:
-  - configmap.yaml
+  #- configmap.yaml
   - deployment.yaml
-  - service.yaml
-  - ingress.yaml
+  - edu-user-secret.yaml
+  #- service.yaml
+  #- ingress.yaml
