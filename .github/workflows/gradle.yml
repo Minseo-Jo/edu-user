@@ -73,14 +73,14 @@ jobs:
       - name: Update Kubernetes resources    # kubernetes 배포 파일에서 docker 이미지 태그 업데이트 
         run: |
           echo "`ls`"
-          cd manifests/overlays/prod        
+          cd ./edu-user/manifests/overlays/prod        
           kustomize edit set image ${{ env.REPO_ACCOUNT }}/${{ env.IMAGE_NAME }}:${{ env.VERSION }}
           cat kustomization.yaml
  # kustomize edit set image : prod DIR 아래 kubernetes 리소스 설정 파일에서 docker 이미지 태그 변경 (예:ydcho0902/k8s-edu:202501191123 로.)
       
       - name: Commit files   # kubernetes 설정 파일 변경 사항을 커밋하고 GitHub에 푸시
         run: |
-          cd manifests
+          cd ./edu-user/manifests
           echo "`ls`"
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
